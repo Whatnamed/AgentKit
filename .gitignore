@@ -1,0 +1,15 @@
+/private/
+/tmp/
+/temp/
+/.cache/
+/node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+.DS_Store
+Thumbs.db
