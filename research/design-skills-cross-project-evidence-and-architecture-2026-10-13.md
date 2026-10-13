@@ -12,7 +12,7 @@
 | [Morpho](https://github.com/Whatnamed/Morpho/tree/8e10903a8ac1450849535514ade9e76229733938) | `8e10903a8ac1450849535514ade9e76229733938` | `docs/design/design-system/docs/DESIGN-SYSTEM.md`、`SOURCE-MAP.md`、`AGENT-BRIEF.md` | 这套文件声明基于已实现的旧版 Morpho 工作台；`SOURCE-MAP.md` 最后同步日期是 2026-07-26，原应用 commit 未记录，**不能证明与 2026-10 main 完全等效** |
 | 三段历史聊天 | 第一轮私有整理档案 | 98 轮用户输入、97 轮助手输出；有脱敏候选规则与私有逐轮证据 | 38 张图片尚未完成逐张视觉核对；未经跨项目实证的规则仍是候选 |
 
-**Morpho 导出包已完成字节级核对。** 用户补充的 `Morpho Design System.zip` 被说明为 ProxyLens 与 AgentBench 设计演进的早期参考来源（用户给出的历史脉络；直接继承关系不靠该 ZIP 自证）。实际 ZIP 是 `templates/repo-export/morpho-design-system/` 下的 **115 文件“仓库版”导出**，而不是含全部原始 UI Kit 的独立设计项目。与 Morpho main @ `8e10903a8ac1450849535514ade9e76229733938` 的 `docs/design/design-system/` 按 Git blob/tree 哈希逐文件比对：**114/115 文件字节完全一致**；只有 `docs/SOURCE-MAP.md` 不同。仓库版在 2026-07-27 补记登录页、项目主页与已安装的 tokens 副本，ZIP 版本没有这项补记。其余 `README`、`DESIGN-SYSTEM`、Tokens、React 组件、声明和逐组件 Prompt 全一致。**所以这份 ZIP 本身并不比仓库该套目录更完整，也无需公开上传重复副本。** 但 ZIP 的 README 明确指出，原独立设计系统项目还包含此导出包**未含**的 `guidelines/*.html` 规范卡片、`ui_kits/morpho-workspace/` 可运行 UI Kit；`DESIGN-SYSTEM.md` 另引用旧 `design/Morpho_Light_Design_System_v1_CN_EN.md` 与早期原型，不能据此宣称这些源资料已完成收集或比对。
+**Morpho 导出包与使用背景。** 用户确认：Morpho 是先开发的产品，其后借助 Claude Design 专门整理了一套细致的设计系统；后来开发 ProxyLens 时，借鉴过这套资料的**内容覆盖、组织架构、规范详细程度及交付方式**。这是设计方法参考的背景，不等于 Morpho → ProxyLens 视觉风格或组件的直接移植，更不等于 AgentBench 直接继承 Morpho。实际 ZIP 是 `templates/repo-export/morpho-design-system/` 下的 **115 文件“仓库版”导出**，而不是含全部原始 UI Kit 的独立设计项目。与 Morpho main @ `8e10903a8ac1450849535514ade9e76229733938` 的 `docs/design/design-system/` 按 Git blob/tree 哈希逐文件比对：**114/115 文件字节完全一致**；只有 `docs/SOURCE-MAP.md` 不同。仓库版在 2026-07-27 补记登录页、项目主页与已安装的 tokens 副本，ZIP 版本没有这项补记。其余 `README`、`DESIGN-SYSTEM`、Tokens、React 组件、声明和逐组件 Prompt 全一致。**所以这份 ZIP 本身并不比仓库该套目录更完整，也无需公开上传重复副本。** 但 ZIP 的 README 明确指出，原独立设计系统项目还包含此导出包**未含**的 `guidelines/*.html` 规范卡片、`ui_kits/morpho-workspace/` 可运行 UI Kit；`DESIGN-SYSTEM.md` 另引用旧 `design/Morpho_Light_Design_System_v1_CN_EN.md` 与早期原型，不能据此宣称这些源资料已完成收集或比对。
 
 ## 2. 核验后更清楚的可复用原则
 
@@ -39,13 +39,13 @@
 
 **可复用方法**：提取视觉系统至少覆盖 Token 语义、文字角色、控件几何、Surface、图标、交互状态、页面密度与真实渲染证据。把平台差异列为例外条件，而不是强制复制像素数字。
 
-### 2.4 不同设计系统案例必须保留各自代际
+### 2.4 Morpho 是设计系统组织与交付方法的参考样本
 
 - [Morpho Design System](https://github.com/Whatnamed/Morpho/blob/8e10903a8ac1450849535514ade9e76229733938/docs/design/design-system/docs/DESIGN-SYSTEM.md) 与用户 ZIP 中对应规范字节完全一致。内容针对旧版已实现的单画布工作台，强调画布对象、浮动控制簇与 AI 面板。
 - [Morpho SOURCE-MAP](https://github.com/Whatnamed/Morpho/blob/8e10903a8ac1450849535514ade9e76229733938/docs/design/design-system/docs/SOURCE-MAP.md) 有源文件映射，但来源同步日期与应用版本需单独追踪。
-- ProxyLens 是克制、精确、证据导向的桌面工作台。两者设计语汇和产品任务不同，不应合并成“个人统一审美”或强迫所有项目统一风格。
+- Morpho 的价值尤其在于完整资料的组织：设计文档 → 分层 Tokens → 组件实现 → 类型声明 → 逐组件 Prompt → Source Map/导出说明；这些适合研究可复用**设计系统制作方法**。ProxyLens 是克制、精确、证据导向的技术工作台，两者产品任务和外观不同，不应合并成“个人统一审美”或强迫所有项目统一视觉。
 
-**已核实**：ZIP 是仓库目录的同源导出版（仅 SOURCE-MAP 的后补记录不同），不再把它误判为另一套独立设计系统。**待处理**：追溯该导出包上游的独立设计系统项目中尚未随包提供的规范卡片、UI Kit，以及更早 v1 文档；在产品案例索引中分别记录“共享视觉语言的来源”与“各项目实装/验收的独立权威”。AgentBench 明确沿用 ProxyLens Frozen v1 视觉基础，不表示将 Morpho 的暖棕色、画布/AI 面板和业务 IA 原样搬入两个产品。
+**已核实**：ZIP 是仓库目录的同源导出版（仅 SOURCE-MAP 的后补记录不同），无需重复公开归档。**待处理**：独立 Claude Design 项目的 `guidelines/`、`ui_kits/` 与更早设计文档并未包含在这份仓库导出包内，因此不能把“仓库导出包的完整性”等同于“当时独立设计项目的完整性”。案例索引要区分：Morpho 设计系统作为组织方法参考、ProxyLens 后续按自身目标制定的视觉/产品规范、AgentBench 有条件继承 ProxyLens Frozen v1 的视觉规范。
 
 ## 3. Skill 架构：先保留候选边界，不急于制作空壳
 
@@ -69,4 +69,4 @@
 4. **定义小规模对比 Eval**：同一 Prompt 分别用无 Skill 与候选 Skill 运行，检测遗漏、过度设计、错误继承、无根据 PASS、审查无限延长；有证据才能决定拆并。
 5. 只有完成上述核对、确认触发边界和最少量的质量标准后，才晋升第一批正式 `SKILL.md` 或私人 Plugin。
 
-**本阶段允许停止在“研究草案 + 可追溯来源 + 明确的欠缺证据”**，不以完成七份 Skill 文件的数量作为验收。
+**下一交付物**：从“继续收集资料”转入**方法/Skill 设计提案**，核定参考包怎样加载、模板与案例的职责、触发条件、前置输入与缺失输入处理、最小交付及 Eval。详见 `research/design-skills-architecture-proposal-v0-2026-10-13.md`。在此之前不以完成七份 Skill 文件的数量作为验收。
