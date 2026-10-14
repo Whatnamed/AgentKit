@@ -1,32 +1,59 @@
 # AgentKit
 
-跨项目、跨 Agent 使用的个人方法与能力资源库。可长期维护 Agent Skills、ChatGPT 私人 Plugins 的源文件、`AGENTS.md` 模板、工作流、参考案例与必要的辅助工具。
+跨项目、跨 Agent 的个人方法、Skill、Plugin 与开发规范库。当前第一批是**完整产品前端设计 → 视觉体系 → 实现交付**的工作方法，不是某一产品的 UI Kit，也不限制将来添加其他领域。
 
-**当前阶段：** 设计方法来源研究已进入两个 Skill **原型试做**。这些目录尚未安装为私人 Plugin，也没有完成独立的多模型效果评估。产品设计与 UI/UX 是第一批主题，不限定仓库未来只能存设计内容。
+## 从一句话开始
 
-## 第一批试做
+“我有一个新产品想法和大概功能，用 AgentKit Product & UX 把产品定义、信息架构和每页布局、操作细节、异常状态都做完整，先不碰视觉；关键决策由我确认。”
 
-- [product-ia-interaction](skills/product-ia-interaction/SKILL.md)：根据已确认产品目标建立或修正页面职责、关键任务路径、上下文与交互状态。
-- [visual-system-extract](skills/visual-system-extract/SKILL.md)：从可追溯源码/设计规范提取设计系统快照，包括组件、Typography、Tokens、Source Map 和真实性边界。
-- [Smoke cases](tests/design-skills-smoke-cases.md)：实际使用前的对照测试题、预期行为与人工评分标准；**目前只是测试设计，并非测试 PASS**。
+产品部分定好以后：
 
-两个目录各自包含可选的 `references/` 与 `assets/`，可独立复制、试用。仅当任务需要时才展开详细参考；不要把研究草案当正式规则。剩余五个候选 Skill 尚未制作，职责见 [v0 架构提案](research/design-skills-architecture-proposal-v0-2026-10-13.md)。
+- **复用视觉**：“用 AgentKit Visual System 从指定旧项目提取视觉语言，再完整适配到新产品的页面，连同字体、空间节奏、行高、表面、组件状态一起做。”
+- **新做视觉**：“用 AgentKit Visual System 帮我从零选方向，在真实代表页面上反复调整，再整理成可开发、可维护的设计系统。”
+- **进入开发**：“使用 `personal-ui-delivery` 按产品/UX 与视觉规范实现 UI，先核对文档与真实代码，不把未定产品设计交给实现 Agent，修改后维护正确的文档。”
 
-## 目录约定
+详见 [从想法到完整前端的使用路线](docs/design-workflow.md)。
 
-- `agents/`：可复用的 Agent 指令模板（不是本仓库的 `AGENTS.md`）。
-- `skills/`：试做及审定后的标准 Agent Skills。
-- `plugins/`：Plugin 分发/打包材料，尽量引用同一份 Skill 源码。
-- `templates/`：可复用产物模板。
-- `references/`：经筛选、脱敏的案例和设计参考。
-- `research/`：待审定研究、候选方法、证据与方案。
-- `scripts/`、`tests/`：必要的辅助脚本和 Skill 评估。
-- `private/`：本机原始对话、附件与未脱敏资料，**永远不上传仓库**。
+## Skills（8 个，单一源码）
 
-目录按实际需要逐渐建立，不预建空壳。
+| 分组 | Skill | 做什么 |
+| --- | --- | --- |
+| Product & UX | [product-discovery](skills/product-discovery/SKILL.md) | 需求与任务补全、对象、范围、可行性 |
+| Product & UX | [product-ia-interaction](skills/product-ia-interaction/SKILL.md) | **完整 IA、逐页空间布局、组件/控件和微交互、状态与恢复** |
+| Product & UX | [product-ux-review](skills/product-ux-review/SKILL.md) | 审查缺漏和不合理交互，按影响决定是否修复和收口 |
+| Visual System | [visual-system-extract](skills/visual-system-extract/SKILL.md) | 从真实来源提取完整设计系统、组件与证据 |
+| Visual System | [visual-system-create](skills/visual-system-create/SKILL.md) | 从零创建视觉语言，支持持续比较和调整 |
+| Visual System | [visual-system-adopt](skills/visual-system-adopt/SKILL.md) | 将指定视觉体系按**角色和细节**迁移到新的产品 IA |
+| Visual System | [visual-qa](skills/visual-qa/SKILL.md) | 真实页面视觉对照、根因、最小修复与停点 |
+| Standalone | [personal-ui-delivery](skills/personal-ui-delivery/SKILL.md) | Coding Agent 按产品/设计文档实现、核对与同步 |
 
-## 资料与隐私
+Skills 可以单独触发，不必每个新问题重复走全流程。完整新产品可以分阶段按用户实际反馈推进，但不以只完成高层框架或 UI Demo 为终点。
 
-本仓库目前是 **Public**。原始 ChatGPT 导出、完整聊天、截图附件、身份/账号信息、密钥、本机私有文件路径，均不进入 Git。仅在明确筛选、脱敏和确认可公开后，才将可复用内容放入 `research/` 或 `references/`。
+## 两个可构建 Plugin
 
-研究结论必须区分用户已确认决策、助手建议、执行报告、源码可验证事实和待验证推断。候选规范不得提前宣称已经跨项目验收。
+- [Product & UX Plugin](plugins/product-ux/README.md) — 3 个 Skills。
+- [Visual System Plugin](plugins/visual-system/README.md) — 4 个 Skills。
+- 独立 `personal-ui-delivery` 是通用 Agent Skill，不捆绑到两个插件。
+
+插件使用 [portable Agent Plugins](https://developers.openai.com/plugins/build/plugins) 的根 `plugin.json`；单一源码在 `skills/`，不手工复制第二份。需要 ZIP 时运行（Python 3.10+，无额外依赖）：
+
+```powershell
+python .\scripts\build-plugins.py
+```
+
+产物：`dist/plugins/agentkit-product-ux.zip`、`dist/plugins/agentkit-visual-system.zip`。导入安装要在支持的平台操作，**本仓库代码存在不意味着账号中已安装 Plugin**。具体见 [打包说明](plugins/README.md)。
+
+## 源码与长期结构
+
+- `AGENTS.md`：仅维护本仓库的稳定协作规则。
+- `skills/`：Agent Skills 的唯一可编辑源；每项自带按需阅读的 `references/` 与 `assets/`。
+- `plugins/`：插件清单与分组；`scripts/`：轻量打包工具。
+- `docs/`：实际使用路线；`research/`：历史草案与来源核验；`references/`：脱敏案例和来源索引。
+- `tests/`：先前拟定的可选 smoke 场景，个人使用**不以跑大量测试为前置**。
+- `private/`：本地原始对话、ZIP、图片和私有笔记，Git 忽略；绝不上传公共仓库。
+
+## 证据与隐私
+
+本仓库是 **Public**。原始 ChatGPT 聊天、未脱敏截图、账号信息、凭据、无法授权的第三方素材和字体文件不进入 Git。项目源码证据应有可核实的版本/路径；用户确认、Agent 建议、设计标准、真实实现和运行验收不是同一种证据。
+
+这套 Skills 旨在**减少重复解释与重复踩坑**。格式及路径已可静态检查，但尚不宣称跨所有模型或不同新项目均经过独立实测；后续只针对实际使用发现的问题进行必要修正，不设无限优化计划。
