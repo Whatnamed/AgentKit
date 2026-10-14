@@ -16,6 +16,8 @@
 
 两个 Plugin 的跨行业方法和公开 Skill 对照已收录于 [2026-10-15 外部复审](research/product-ui-external-practice-review-2026-10-15.md)；只补真正需要的按需知识，不新增强制检查流程。
 
+**跨项目工作流探索**：另见 [个人 Coding Agent 工作流与知名开发者 Skills 比较（2026-10-15）](research/cross-domain-agent-workflow-landscape-2026-10-15.md)，覆盖 Matt Pocock、Every、Superpowers、gstack、OpenSpec、Spec Kit、BMad、GSD 和 Peter Steinberger；此文件是研究提案，不表示已安装或启用新的开发框架。
+
 ## Skills（8 个，单一源码）
 
 | 分组 | Skill | 做什么 |
