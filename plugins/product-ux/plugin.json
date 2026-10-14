@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agentkit-product-ux",
+  "version": "1.0.0",
+  "description": "Turn product ideas and functional requirements into complete product definitions, information architecture, detailed page layouts, interactions, and pragmatic UX reviews."
+}

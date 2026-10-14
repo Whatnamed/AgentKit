@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agentkit-visual-system",
+  "version": "1.0.0",
+  "description": "Extract, create, adapt, and inspect complete product visual systems, from typography and spatial rhythm to tokens, component states, and render fidelity."
+}
