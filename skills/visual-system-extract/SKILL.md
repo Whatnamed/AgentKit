@@ -15,7 +15,7 @@ description: "当用户希望从已有网站、源码、设计文件或已验收
 2. **识别设计理念**：产品气质、内容密度、主次层级、导航/工作区的视觉关系。区分可移植的视觉语言与源产品业务页面、专有组件和对象。
 3. **分层清点**：主题与语义颜色、Surface 层次、文字角色（Page/Section/Item/Metadata）、字体/字重/中英 fallback/mono/真实资源、字号行高字距、Page/Section/Group/Item/Control 的距离节奏、控件高度和内边距、分割线、图标和 optical alignment、动效与可访问性。用 [覆盖与证据等级](references/coverage-and-evidence.md)。
 4. **真实组件合同**：导航/工具条/表单/列表/表格/筛选/卡片/Inspector/弹层/状态和领域组件按需建立 Props、variants、交互状态、内容密度、长文本和窄屏行为；缺源码时明确是推断而非 API 事实。
-5. **源码与交付结构**：参考 Morpho 设计系统的多层资料形式，整理规范、Tokens、组件、类型、逐组件指引、源码映射和依赖/许可，但以**源资料实际有的东西**为限；不得将导出版错当完整原始设计项目。可用 [参考包模板](assets/design-system-pack-index.md) 做轻量索引。
+5. **源码与交付结构**：参考 Morpho 设计系统的多层资料形式，整理规范、Tokens、组件、类型、逐组件指引、源码映射和依赖/许可，但以**源资料实际有的东西**为限；不得将导出版错当完整原始设计项目。整套可交付系统可按需读 [设计系统架构与资料责任](references/design-system-architecture.md)，明确 Foundations / Components / Patterns / Source Map 不同层次。可用 [参考包模板](assets/design-system-pack-index.md) 做轻量索引。
 6. **真实性核对**：CSS 声明 ≠ 字体真实渲染；源系统运行验证与目标运行验证分开。必要时抽查浏览器/宿主下的 Light/Dark、hover/selected/focus/disabled/busy、长中文英文、溢出与间距节奏。没有完整运行证据则标记 `unverified`，不是 PASS。
 7. **总结移植边界**：写清哪些视觉规则可继承、哪些项目专有、哪些缺失或未授权、是否包含真实可运行组件，以及使用前还需补哪些来源。
 

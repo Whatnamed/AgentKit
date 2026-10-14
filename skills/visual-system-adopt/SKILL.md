@@ -13,7 +13,7 @@ description: "当新产品已有独立信息架构和交互，需要完整继承
 
 1. **先锁定两个来源**：视觉来源产品的具体 commit/设计包/运行参考，以及新产品当前的已确认 IA/UX 和目标技术平台。源代码、官方规范、静态截图与实际运行分别标证据；不能用未经核实的最新主分支替代用户指定视觉版本。
 2. **充分提取源系统**：必要时先用 `visual-system-extract`，覆盖字体文件与真实权重、色彩/表面、文字层级、空间节奏、控制尺寸、图标、组件和所有适用状态；识别源系统独有的导航、数据结构、页面骨架和品牌表达。
-3. **建立源→目标的角色映射**：逐页确认目标布局与任务，从 shell/sidebar/toolbar/section/list/detail/inspector/popover/form/table/status 等**功能角色**寻找源视觉规则。使用 [适配细节清单](references/adoption-fidelity.md)；区分 `inherit` / `adapt` / `new` / `do-not-transfer`，并说明理由。
+3. **建立源→目标的角色映射**：逐页确认目标布局与任务，从 shell/sidebar/toolbar/section/list/detail/inspector/popover/form/table/status 等**功能角色**寻找源视觉规则。使用 [适配细节清单](references/adoption-fidelity.md)；整套迁移时另读 [视觉保真层次与交接](references/visual-fidelity-and-handoff.md)，从基础数值、语义角色、组件及状态到页面节奏逐层判断目标是否真的完整适配。区分 `inherit` / `adapt` / `new` / `do-not-transfer` 并说明理由。
 4. **落实空间与文字的细节**：明确每个目标页面最重要区块的密度、标题和正文关系、section 距离、列表行高、元信息间距、边框/底色层次、焦点/选中强弱、长文本、控制对齐。若某源常量不符合目标任务，保留视觉原则并标记局部例外，不机械复制像素值。
 5. **准备目标设计系统**：形成独立于源业务的语义 Token、组件规范、字体加载/许可与 fallback、设计例外和源码映射；说明目标组件从哪些源 primitives 改造，哪些需要新做。用 [适配合同](assets/adoption-map.md) 记录关键映射，不要把两个系统长期绑在同一份业务 CSS 上。
 6. **真实对照并修复差异**：先在目标高压力页面落地真实 UI 样张，再看多种内容量、Light/Dark、字形、窗口与状态，区分实现偏离、规范缺项、运行环境或必要业务差异。可交给 `visual-qa` 做差异检查。只有真实来源和目标渲染证据才可称视觉验收完成。
