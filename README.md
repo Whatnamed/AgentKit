@@ -18,7 +18,9 @@
 
 **跨项目工作流探索**：另见 [个人 Coding Agent 工作流与知名开发者 Skills 比较（2026-10-15）](research/cross-domain-agent-workflow-landscape-2026-10-15.md)，覆盖 Matt Pocock、Every、Superpowers、gstack、OpenSpec、Spec Kit、BMad、GSD 和 Peter Steinberger；此文件是研究提案，不表示已安装或启用新的开发框架。
 
-## Skills（8 个，单一源码）
+**工程任务的最新取舍**：参见 [2026-10-23 有界审查、Bug 调试与反过度工程化复核](research/engineering-skills-proportionality-review-2026-10-23.md)。现已新增两个独立工程 Skills；`decision-to-execution` 与 `context-continuity` 因和既有习惯重合暂不创建。
+
+## Skills（10 个，单一源码）
 
 | 分组 | Skill | 做什么 |
 | --- | --- | --- |
@@ -30,6 +32,8 @@
 | Visual System | [visual-system-adopt](skills/visual-system-adopt/SKILL.md) | 将指定视觉体系按**角色和细节**迁移到新的产品 IA |
 | Visual System | [visual-qa](skills/visual-qa/SKILL.md) | 真实页面视觉对照、根因、最小修复与停点 |
 | Standalone | [personal-ui-delivery](skills/personal-ui-delivery/SKILL.md) | Coding Agent 按产品/设计文档实现、核对与同步 |
+| Engineering | [spec-and-diff-review](skills/spec-and-diff-review/SKILL.md) | 根据需求与 Git diff 做双轴审查，控制范围与多余验证 |
+| Engineering | [repro-first-debug](skills/repro-first-debug/SKILL.md) | 针对真实 Bug 建立有效证据、调查根因并有界修复 |
 
 Skills 可以单独触发，不必每个新问题重复走全流程。完整新产品可以分阶段按用户实际反馈推进，但不以只完成高层框架或 UI Demo 为终点。
 
