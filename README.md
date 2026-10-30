@@ -51,13 +51,6 @@ python .\scripts\build-plugins.py
 
 产物：`dist/plugins/agentkit-product-ux.zip`、`dist/plugins/agentkit-visual-system.zip`。导入安装要在支持的平台操作，**本仓库代码存在不意味着账号中已安装 Plugin**。具体见 [打包说明](plugins/README.md)。
 
-## 上游原版与 ChatGPT 私有 Plugin
-
-- [vendor/](vendor/README.md) 固定保存 Ponytail、Stop That Shit（含 STSS）、Anti-Defensive Writing 的原版 Skills 与许可证。**不修改正文**；这不是 AgentKit 自创的 10 个 Skills，也不意味着已安装进各本地 Agent。
-- [Scope & Writing](plugins/scope-and-writing/plugin.json) 与 [Academic Writing](plugins/academic-writing/plugin.json) 是 ChatGPT **skills-only** 包装；运行 `python scripts/build-vendor-chatgpt-plugins.py` 可从原文快照重新生成 ZIP。不能声称这些包具有原生 Codex/Claude Hook 的拦截能力。
-- [ChatGPT 项目指令模板](templates/chatgpt-project-instructions.md) 负责聊天、任务规划和写作时的简洁与真实；[Coding Agent 指令模板](templates/coding-agent-defaults.md) 借鉴 Karpathy 的简洁原则，按实际宿主配置后才会成为持续规则。
-- Ponytail 若已安装，建议继续使用**上游官方 Plugin** 执行日常代码编写；STS 适合任务边界、无效防御与重复流程；STSS 用于一般表达；Anti-Defensive Writing 专用于学术论文。不同工具并非全都需要常驻激活。
-
 ## 源码与长期结构
 
 - `AGENTS.md`：仅维护本仓库的稳定协作规则。
