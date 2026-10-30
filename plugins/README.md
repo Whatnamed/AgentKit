@@ -1,6 +1,6 @@
 # AgentKit Plugin 组装
 
-当前两个 **skills-only portable Agent Plugin** 源包：
+AgentKit 原生维护两个 **skills-only portable Agent Plugin** 源包：
 - [Product & UX](product-ux/README.md)
 - [Visual System](visual-system/README.md)
 
@@ -26,3 +26,9 @@ dist/plugins/agentkit-visual-system.zip
 若只需要本地 Coding Agent，按其真实加载约定使用根 `skills/` 中的独立技能即可；**ChatGPT Plugin 的安装不会自动把技能安装到每个本地 Agent**。
 
 如暂时不想使用本地 Python，也可在 GitHub 仓库 Actions 页手动运行 **Build AgentKit Plugins**，从该次运行的 `agentkit-plugin-bundles` artifact 下载两个已组装的插件 ZIP（外层 artifact 压缩包需要解压后再导入其中的单插件 ZIP）。这只是**按需打包**，不会安装到账号里。
+
+## 第三方 Skill 原文适配
+
+此外还有两项 ChatGPT 私人插件包装：[Scope & Writing](scope-and-writing/README.md)（原版 STS + STSS）与 [Academic Writing](academic-writing/README.md)（原版学术写作中文 Skill）。它们不参与原有 `build-plugins.py` 的两个核心产品设计包，使用 `python scripts/build-vendor-chatgpt-plugins.py` 单独构建，来源为 `vendor/` 的冻结原文与许可证。
+
+ChatGPT 的 skills-only 形式不会运行原版 Codex/Claude Hook；本地需要强拦截时按上游官方插件渠道安装。个人 ChatGPT 插件 ID 与链接只在账号内管理，不写入本公开仓库。
