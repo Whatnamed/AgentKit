@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agentkit-scope-and-writing",
+  "version": "0.1.0",
+  "description": "Unmodified Stop That Shit task-boundary and STSS prose-writing skills, for ChatGPT without local hooks."
+}
