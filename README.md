@@ -51,7 +51,7 @@ python .\scripts\build-plugins.py
 
 产物：`dist/plugins/agentkit-product-ux.zip`、`dist/plugins/agentkit-visual-system.zip`。导入安装要在支持的平台操作，**本仓库代码存在不意味着账号中已安装 Plugin**。具体见 [打包说明](plugins/README.md)。
 
-**ChatGPT Project 项目指令增补**：见 [防无效防御与任务偏移（可复制片段）](docs/chatgpt-project-instructions-addendum.md)。它专供当前及其他 ChatGPT Project 在现有项目指令基础上去重融合，不是本仓库 `AGENTS.md` 或本机全局 Agent 规则，也不自动更新 ChatGPT 的项目设置。
+**ChatGPT Project 完整项目指令**：见 [《开发项目协作规则》完整整合版](docs/chatgpt-project-instructions.md)，已按既有八章节将反无效防御、适度验证及写作要求融入正文，可整份复制到 ChatGPT Project 设置。仓库根目录 [AGENTS.md](AGENTS.md) 是本仓库完整、独立的协作规则，不等于本机用户全局 AGENTS.md；后者的最新私有原文没有存放于此公开仓库。
 
 ## 源码与长期结构
 
